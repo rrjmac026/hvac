@@ -34,6 +34,8 @@ class InvoiceResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('due_date')
                     ->required(),
+                Forms\Components\TextInput::make('transaction')
+                    ->required(),
                 Forms\Components\Select::make('status')
                     ->options([
                         'unpaid' => 'Unpaid',

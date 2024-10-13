@@ -18,6 +18,7 @@ class ClientResource extends Resource
     protected static ?string $model = Client::class;
     protected static ?string $navigationIcon = 'heroicon-s-users';
     protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $navigationGroup = 'Client and Pet Management';
 
     public static function getGlobalSearchResultTitle(Model $record): string
     {

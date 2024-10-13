@@ -21,7 +21,8 @@
                 <p>Due Date: {{ $invoice->due_date->format('Y-m-d') }}</p>
                 <p>Status: {{ ucfirst($invoice->status) }}</p>
                 <p>Amount: ₱{{ number_format($invoice->amount, 2) }}</p>
-                <h2>Invoice Details:</h2>
+                <!-- <h2>Invoice Details:</h2> -->
+                <h2>Transactions: {{ $invoice->transaction }}</h2>
                 
                 <p>Thank you for choosing Highland Vets</p>
             </td>

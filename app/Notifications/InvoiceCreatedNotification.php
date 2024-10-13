@@ -52,15 +52,7 @@ class InvoiceCreatedNotification extends Notification
             'as' => 'logo.png',
             'mime' => 'image/png',
         ]);
-        // return (new MailMessage)
-        //     ->line('A new invoice has been created.')
-        //     ->line('Invoice ID: ' . $this->invoice->id)
-        //     ->line('Amount: ₱' . number_format($this->invoice->amount, 2))
-        //     ->line('Invoice Date: ' . $this->invoice->invoice_date->format('Y-m-d'))
-        //     ->line('Due Date: ' . $this->invoice->due_date->format('Y-m-d'))
-        //     ->line('Status: ' . ucfirst($this->invoice->status))
-        //     ->action('View Invoice', url('/invoices/' . $this->invoice->id))
-        //     ->line('Thank you for choosing Highland Vets');
+        
     }
 
     // You can also add other methods for different channels like SMS if needed

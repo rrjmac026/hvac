@@ -18,7 +18,8 @@ class Invoice extends Model
         'amount', 
         'invoice_date', 
         'due_date', 
-        'status'
+        'status',
+        'transaction'
     ];
 
     protected $casts = [
@@ -36,16 +37,15 @@ class Invoice extends Model
         return $this->belongsTo(Appointment::class);
     }
 
-    public static function boot()
+    protected static function booted()
     {
-        parent::boot();
-
         static::created(function ($invoice) {
             if ($invoice->client) {
-                Notification::send($invoice->client, new InvoiceCreatedNotification($invoice));
+                \Illuminate\Support\Facades\Notification::send($invoice->client, new \App\Notifications\InvoiceCreatedNotification($invoice));
             }
         });
     }
+    
 
     public function scopeUnpaid($query)
     {

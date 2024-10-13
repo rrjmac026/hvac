@@ -40,6 +40,7 @@ class AppointmentScheduledNotification extends Notification
             // Make sure `appointment_date` is treated as a Carbon instance
             ->line('Appointment Date: ' . $this->appointment->appointment_date->format('F j, Y, g:i a'))
             ->line('Status: ' . ucfirst($this->appointment->status))
+            ->line('Notes: ' . ($this->appointment->notes))
             ->line('Thank you for choosing our veterinary clinic!');
     }
 

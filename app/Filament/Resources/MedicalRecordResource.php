@@ -15,6 +15,16 @@ class MedicalRecordResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-clipboard';
     protected static ?string $navigationGroup = 'Medical Records';
 
+    public static function getPermissions(): array
+    {
+        return [
+            'view medical records' => 'view',
+            'create medical records' => 'create',
+            'update medical records' => 'update',
+            'delete medical records' => 'delete',
+        ];
+    }
+
     public static function form(Forms\Form $form): Forms\Form
     {
         return $form

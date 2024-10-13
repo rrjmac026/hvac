@@ -17,9 +17,13 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea; // Import Textarea component
 use Illuminate\Database\Eloquent\Model;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+ 
 
 class CalendarWidget extends FullCalendarWidget
 {
+
+    use HasWidgetShield;
     // Specify the model that this widget interacts with
     public Model|string|null $model = Appointment::class;
     

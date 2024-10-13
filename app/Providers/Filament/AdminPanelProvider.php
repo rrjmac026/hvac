@@ -39,7 +39,8 @@ class AdminPanelProvider extends PanelProvider
                 FilamentFullCalendarPlugin::make()
                 ->selectable()
                 ->editable(),
-                \Hasnayeen\Themes\ThemesPlugin::make()
+                \Hasnayeen\Themes\ThemesPlugin::make(),
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
                 
             ])
             ->sidebarFullyCollapsibleOnDesktop()
@@ -61,7 +62,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 // ClientWidget::class
-                Widgets\AccountWidget::class,
+                // Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
                 \App\Filament\Widgets\CalendarWidget::class,
             ])

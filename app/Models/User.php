@@ -6,10 +6,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
+use Filament\Models\Contracts\FilamentUser;
+use Illuminate\Support\Facades\Hash;
+
+class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable;
+    use HasRoles;
+    use HasPanelShield;
+
+
 
     /**
      * The attributes that are mass assignable.

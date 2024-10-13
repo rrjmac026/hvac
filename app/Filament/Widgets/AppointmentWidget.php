@@ -12,9 +12,12 @@ use App\Models\Pet;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Filament\Support\Enums\IconPosition;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+ 
 
 class AppointmentWidget extends BaseWidget
 {
+    use HasWidgetShield;
     protected function getStats(): array
     {
         return [

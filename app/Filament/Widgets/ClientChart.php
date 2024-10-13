@@ -7,9 +7,14 @@ use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
 use Illuminate\Support\Carbon;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+
 
 class ClientChart extends ChartWidget
 {
+
+    use HasWidgetShield;
+    
     protected static ?string $heading = 'Clients Added per Month';
 
     protected static ?int $columns = 5; // Adjust column span here

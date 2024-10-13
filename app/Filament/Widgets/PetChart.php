@@ -7,9 +7,12 @@ use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
 use Illuminate\Support\Carbon;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
 class PetChart extends ChartWidget
 {
+
+    use HasWidgetShield;
     protected static ?string $heading = 'Pets Added per Month';
 
     protected function getData(): array
