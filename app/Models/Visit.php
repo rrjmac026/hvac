@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\VisitNotificationMail;
 
+
 class Visit extends Model
 {
     protected $fillable = [

@@ -22,6 +22,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+
 use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
 
 use App\Filament\Pages\Calendar;
@@ -40,9 +41,14 @@ class AdminPanelProvider extends PanelProvider
                 ->selectable()
                 ->editable(),
                 \Hasnayeen\Themes\ThemesPlugin::make(),
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
                 
             ])
+
+            ->resources([
+                config('filament-logger.activity_resource')
+            ])
+            
             ->sidebarFullyCollapsibleOnDesktop()
             ->brandName('Highland Vets')
             ->colors([
